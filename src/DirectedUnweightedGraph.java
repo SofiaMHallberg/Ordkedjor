@@ -32,6 +32,37 @@ public class DirectedUnweightedGraph {
         return words;
     }
 
+    public void test(String fileName, Digraph wordGraph, ArrayList<String> words) {
+        BufferedReader r =
+                null;
+        try {
+            r = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        while (true) {
+            String line = null;
+            try {
+                line = r.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (line == null) {
+                break;
+            }
+            assert line.length() == 11; // indatakoll, om man kör med assertions på
+            String start = line.substring(0, 5);
+            String goal = line.substring(6, 11);
+            // ... sök väg från start till goal här
+
+            int s = words.indexOf(start);
+            int v = words.indexOf(goal);
+
+            bsfTest(wordGraph,s,v);
+        }
+
+    }
+
     public Digraph createGraph(ArrayList<String> words) {
         Digraph wordGraph=new Digraph(words.size());
 
@@ -69,16 +100,30 @@ public class DirectedUnweightedGraph {
                         pathLength++;
                     }
                 }
-
                 System.out.println(pathLength);
             }
         }
     }
 
+    public void bsfTest(Digraph wordGraph, int s, int v) {
+
+        BreadthFirstDirectedPaths bfs = new BreadthFirstDirectedPaths(wordGraph, s);
+        Iterable<Integer> shortestPath=bfs.pathTo(v);
+
+        int pathLength=-1;
+        if(shortestPath != null) {
+            for (int edge : shortestPath) {
+                pathLength++;
+            }
+        }
+        System.out.println(pathLength);
+    }
+
     public static void main(String[] args) {
         DirectedUnweightedGraph test=new DirectedUnweightedGraph();
-        ArrayList<String> words = test.readWords("files/3Words");
+        ArrayList<String> words = test.readWords("files/13Words");
         Digraph digraph=test.createGraph(words);
-        test.shortestPaths(digraph, words.size());
+        //test.shortestPaths(digraph, words.size());
+        test.test("files/3Words",digraph,words);
     }
 }
