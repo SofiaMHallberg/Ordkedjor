@@ -17,7 +17,7 @@
   </component>
   <component name="ProjectId" id="1ilkXkGglBV38KFL3UU3N5YgH0a" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/algs4.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MergeAndQuickSort" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -39,6 +39,20 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="DirectedUnweightedGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DirectedUnweightedGraph" />
+      <module name="Ordkedjor" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DirectedUnweightedGraph" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
