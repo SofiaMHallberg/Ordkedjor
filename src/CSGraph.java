@@ -164,7 +164,7 @@ public class CSGraph {
     /**
      * Creates bfs-object for all possible source nodes that computes the shortest paths to all other vertices.
      */
-    public void shortestPaths() {
+    public void shortestPathsNodes() {
         for (int sourceNode = 0; sourceNode < wordGraph.V(); sourceNode++) {
             BreadthFirstDirectedPaths bfs = new BreadthFirstDirectedPaths(wordGraph, sourceNode);
 
@@ -211,12 +211,12 @@ public class CSGraph {
             int s = words.indexOf(start);
             int v = words.indexOf(goal);
 
-            breadthFirstSearch(s, v);
+            shortestPathPairs(s, v);
         }
 
     }
 
-    public void breadthFirstSearch(int s, int v) {
+    public void shortestPathPairs(int s, int v) {
 
         BreadthFirstDirectedPaths bfs = new BreadthFirstDirectedPaths(wordGraph, s);
         Iterable<Integer> shortestPath = bfs.pathTo(v);
