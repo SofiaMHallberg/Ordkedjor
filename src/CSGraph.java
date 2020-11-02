@@ -11,6 +11,10 @@ public class CSGraph {
     private ArrayList<String> words;
     private Digraph wordGraph;
 
+    /**
+     * Constructs a CSGraph and creates a hashtable, a word-array and makes calls for creating a hashtable and a graph.
+     * @param fileName the input text file.
+     */
     public CSGraph(String fileName) {
         hashTable = new CSHashing();
         words = readWords(fileName);
@@ -20,17 +24,17 @@ public class CSGraph {
         createHashTable();              // Frivillig bra lösning
         createGraphWithHashTable();     // Frivillig bra lösning
 
-//      shortestPaths();
+//      shortestPaths();                // Metod som endast används till textfilen utan par.
 
-        testPairs("files/7Pairs");
+        readPairs("files/5757Pairs");
     }
 
 
     /**
-     * Method that creates an ArrayList and fills it with strings from a text file
+     * Method that creates an ArrayList and fills it with strings from a text file.
      *
-     * @param fileName a file with strings
-     * @return an ArrayList with strings
+     * @param fileName a file with strings.
+     * @return an ArrayList with strings.
      */
     public ArrayList<String> readWords(String fileName) {
         BufferedReader r = null;
@@ -60,13 +64,19 @@ public class CSGraph {
         return words;
     }
 
+    /**
+     * Creates a temporary array with the words input data and sorts them in an alphabetical order.
+     * Loops through the temp-array and splits the word in the five combinations and put them in all in the hashtable.
+     *
+     */
     public void createHashTable() {
+
         String[] tempArray = new String[words.size()];
+
         for (int i = 0; i < words.size(); i++) {
             char[] word = words.get(i).toCharArray();   // char[] snarf
             Arrays.sort(word);                          // char[] afnrs
-            tempArray[i] = toString(word);       // String afnrs
-
+            tempArray[i] = toString(word);              // String afnrs
         }
 
         for (int i = 0; i < words.size(); i++) {
@@ -74,15 +84,19 @@ public class CSGraph {
             hashTable.put(word.substring(0, 4), i);                                 // plocka bort bokstav nr 5
             String subString4 = (word.substring(0, 3) + word.substring(4, 5));      // plocka bort bokstav nr 4
             hashTable.put(subString4, i);
-            String subString3 = (word.substring(0, 2) + word.substring(3, 5));            // plocka bort bokstav nr 3
+            String subString3 = (word.substring(0, 2) + word.substring(3, 5));      // plocka bort bokstav nr 3
             hashTable.put(subString3, i);
-            String subString2 = (word.substring(0, 1) + word.substring(2, 5));            // plocka bort bokstav nr 2
+            String subString2 = (word.substring(0, 1) + word.substring(2, 5));      // plocka bort bokstav nr 2
             hashTable.put(subString2, i);
             hashTable.put(word.substring(1, 5), i);                                 // plocka bort bokstav nr 1
-
         }
     }
 
+    /**
+     * Creates a graph and sort the next word in alphabetical order and receives a list of
+     * neighbours from the hashtable. If there's neighbours an edge is added between them.
+     * @return a digraph.
+     */
     public Digraph createGraphWithHashTable() {
         wordGraph = new Digraph(words.size());
 
@@ -101,6 +115,11 @@ public class CSGraph {
         return wordGraph;
     }
 
+    /**
+     * Receives an input char[] and creates a new String of the array.
+     * @param a the input char[].
+     * @return the new string.
+     */
     public static String toString(char[] a) {
         String string = new String(a);
         return string;
@@ -109,15 +128,15 @@ public class CSGraph {
     /**
      * Method that creates a digraph from an ArrayList with strings.
      *
-     * @return a digraph
+     * @return a digraph.
      */
-    public Digraph createGraph() { // skicka en huvudnod för att bygga graf.
+    public Digraph createGraph() {
         wordGraph = new Digraph(words.size());
 
-        for (int v = 0; v < words.size(); v++) { // v-nod = v, w-grannar = j.
+        for (int v = 0; v < words.size(); v++) {
             for (int w = 0; w < words.size(); w++) {
                 if (compareWords(words.get(v), words.get(w))) {
-                    wordGraph.addEdge(w, v); // bygger graf ifrån grannen till huvudnod.
+                    wordGraph.addEdge(w, v);
                 }
             }
         }
@@ -143,7 +162,7 @@ public class CSGraph {
     }
 
     /**
-     * Creates bfs-object for all possible source nodes that computes the shortest paths to all other vertices
+     * Creates bfs-object for all possible source nodes that computes the shortest paths to all other vertices.
      */
     public void shortestPaths() {
         for (int sourceNode = 0; sourceNode < wordGraph.V(); sourceNode++) {
@@ -164,7 +183,11 @@ public class CSGraph {
         }
     }
 
-    public void testPairs(String fileName) {
+    /**
+     * Reads a line from a text file and does a BFS from a start node to a goal node.
+     * @param fileName the input text file.
+     */
+    public void readPairs(String fileName) {
         BufferedReader r = null;
         try {
             r = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
@@ -188,12 +211,12 @@ public class CSGraph {
             int s = words.indexOf(start);
             int v = words.indexOf(goal);
 
-            bsfTest(s, v);
+            breadthFirstSearch(s, v);
         }
 
     }
 
-    public void bsfTest(int s, int v) {
+    public void breadthFirstSearch(int s, int v) {
 
         BreadthFirstDirectedPaths bfs = new BreadthFirstDirectedPaths(wordGraph, s);
         Iterable<Integer> shortestPath = bfs.pathTo(v);
@@ -208,6 +231,6 @@ public class CSGraph {
     }
 
     public static void main(String[] args) {
-        new CSGraph("files/13Words");
+        new CSGraph("files/5757Words");
     }
 }
