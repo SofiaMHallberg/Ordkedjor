@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33387c2f-4e39-491e-bc3b-13da93023739" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,33 +15,29 @@
     </option>
   </component>
   <component name="ProjectId" id="1ilkXkGglBV38KFL3UU3N5YgH0a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MergeAndQuickSort" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sofia\OneDrive\Documents\GitHub\Ordkedjor\files" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.TestHash">
-    <configuration name="DirectedUnweightedGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DirectedUnweightedGraph" />
+  <component name="RunManager" selected="Application.CSGraph">
+    <configuration name="CSGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CSGraph" />
       <module name="Ordkedjor" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -57,11 +52,12 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CSGraph" />
         <item itemvalue="Application.TestHash" />
-        <item itemvalue="Application.DirectedUnweightedGraph" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -74,5 +70,35 @@
       <updated>1602489607917</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="468" y="270" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604312413460">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="468" y="270" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877@0.23.1440.877" timestamp="1604312413460" />
+    <state width="1398" height="206" key="GridCell.Tab.0.bottom" timestamp="1604314572494">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="206" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1604314572494" />
+    <state width="1398" height="206" key="GridCell.Tab.0.center" timestamp="1604314572493">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="206" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1604314572493" />
+    <state width="1398" height="206" key="GridCell.Tab.0.left" timestamp="1604314572493">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="206" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1604314572493" />
+    <state width="1398" height="206" key="GridCell.Tab.0.right" timestamp="1604314572494">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="206" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1604314572494" />
+    <state x="208" y="43" key="SettingsEditor" timestamp="1604314570269">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="208" y="43" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1604314570269" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1604310672229">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1604310672229" />
   </component>
 </project>
